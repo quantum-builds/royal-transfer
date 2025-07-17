@@ -109,26 +109,32 @@ export default function RidePickingSection() {
   return (
     <section
       id="ride-section"
-      className="h-[170vh] flex flex-col justify-center  items-center"
+      className="lg:h-[1240px] xl:h-[1350px] 3xl:h-[1350px] flex flex-col justify-center  my-20"
     >
-      <div className="h-10/12 md:w-11/12 lg:w-[98%] xl:w-11/12 2xl:w-10/12 mx-auto flex flex-col gap-20">
+      <div className="h-full md:w-11/12  2xl:w-10/12 mx-auto flex flex-col gap-20">
         <div className="w-full flex justify-end">
           <button
-            className="cursor-pointer border-2 border-black bg-transparent text-black rounded-lg  px-3 py-4 flex gap-4 "
+            className="cursor-pointer border-2 border-black bg-transparent text-black rounded-lg  px-3 py-3 flex gap-4 "
             onClick={handleBackClick}
           >
             <Image src={ArrowLeft} alt="arrow-left" width={28} height={5} />
-            <p className="text-2xl be-vietnam-pro">Back to Get Quotes</p>
+            <p className="md:text-lg lg:text-xl xl:text-2xl be-vietnam-pro">
+              Back to Get Quotes
+            </p>
           </button>
         </div>
-        <div className="flex w-full lg:w-11/12 mx-auto xl:w-full justify-between">
-          <h2 className="text-[64px] uppercase bebas-neue leading-none text-black">
+        <div className="flex w-full mx-auto xl:w-full justify-between">
+          <h2 className="md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black">
             Pick Your Ride, Your Way
           </h2>
           <div className="flex flex-col gap-2 text-end be-vietnam-pro">
-            <p className="text-red-500 text-2xl">No Hidden Cost</p>
-            <p className="text-2xl">Free Cancelation</p>
-            <p className="text-2xl">All Prices Include Fees and Tolls</p>
+            <p className="text-red-500 lg:text-lg xl:text-2xl">
+              No Hidden Cost
+            </p>
+            <p className="lg:text-lg xl:text-2xl">Free Cancelation</p>
+            <p className="lg:text-lg xl:text-2xl">
+              All Prices Include Fees and Tolls
+            </p>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 xl:gap-6">
@@ -145,11 +151,11 @@ export default function RidePickingSection() {
               roundTripPrice={option.roundTripPrice}
             />
           ))}
-          <div className="flex w-full flex-col items-end justify-end ">
-            <div className="flex flex-col gap-5  w-10/12">
-              <h3 className="text-5xl uppercase text-end">
+          <div className="flex w-full flex-col items-end justify-end md:mt-3 lg:m-0">
+            <div className="flex flex-col gap-5 w-8/12  lg:w-10/12">
+              <h2 className="md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-end text-black">
                 Our Drivers Rating
-              </h3>
+              </h2>
               {DRIVERS.map((driver, index) => (
                 <div
                   key={index}
@@ -162,7 +168,7 @@ export default function RidePickingSection() {
                       width={64}
                       height={64}
                     />
-                    <span className="text-2xl">{driver.name}</span>
+                    <span className="text-xl xl:text-2xl">{driver.name}</span>
                   </div>
                   <StarRating rating={driver.star} />
                 </div>

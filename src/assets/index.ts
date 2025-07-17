@@ -63,3 +63,5 @@ export { default as LocationVector } from "./location-vector.svg";
 export { default as PhoneVector } from "./phone-vector.svg";
 export { default as MailVector } from "./mail-vector.svg";
 export { default as ArrowLeft } from "./arrow-left.svg";
+export { default as PlusIcon } from "./plus.svg";
+export { default as MinusIcon } from "./minus.svg";

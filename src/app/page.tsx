@@ -5,6 +5,7 @@ import RidePickingSection from "./components/sections/RidePickingSection";
 import MultipleLocationSection from "./components/sections/MultipleLocationSection";
 import RidePickingSectionSkeleton from "./components/sections/RidePickingSectionSkeleton";
 import { Suspense } from "react";
+import TermsConditionSection from "./components/sections/TermsConditionSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       {/* <LookingForTaxiSection /> */}
       <CarTypesSection />
       <MultipleLocationSection />
+      <TermsConditionSection />
       {/* <ScamHelpSection /> */}
       {/* <CarPoolSection /> */}
       {/* <RidePlanSection /> */}

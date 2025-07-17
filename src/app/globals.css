@@ -37,6 +37,14 @@
       rgba(0, 0, 0, 0) 56.56%
     );
   }
+
+  .bg-navbar-gradient {
+    background-image: linear-gradient(
+      90.21deg,
+      rgba(6, 2, 28, 0.6) 0%,
+      rgba(26, 19, 70, 0.6) 100%
+    );
+  }
 }
 
 @theme {
@@ -44,6 +52,10 @@
   --color-gray: #666666;
   --color-black: #24204c;
   --color-blue: #221f4b;
+
+  --breakpoint-3xl: 101.875rem;
+  --breakpoint-4xl: 113.125rem;
+  --breakpoint-5xl: 138.125rem;
 }
 
 :root {

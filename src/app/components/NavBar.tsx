@@ -26,11 +26,18 @@ const NAVBAR_OPTIONS = [
   },
 ];
 
-export default function NavBar() {
+interface NavBarProps {
+  scrolled: boolean;
+}
+export default function NavBar({ scrolled }: NavBarProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50  backdrop-blur-sm py-2 px-6 lg:px-8">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 py-2 px-6 lg:px-8 transition-colors duration-300 ${
+        scrolled ? "bg-navbar-gradient backdrop-blur-sm" : "bg-transparent"
+      }`}
+    >
       <div className="md:w-11/12 xl:10/12 mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
@@ -38,7 +45,7 @@ export default function NavBar() {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center gap-8 be-vietnam-pro">
+        <div className="hidden lg:flex items-center gap-8 be-vietnam-pro">
           {NAVBAR_OPTIONS.map((option, index) => (
             <div key={index} className="relative">
               <a
@@ -52,7 +59,7 @@ export default function NavBar() {
         </div>
 
         {/* Mobile Menu Button (hidden on desktop) */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button
             className="text-white focus:outline-none"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -73,7 +80,7 @@ export default function NavBar() {
           </button>
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <button className="bg-yellow text-white px-8 lg:px-6 xl:px-8 py-3 rounded-full w-fit cursor-pointer poppins ">
             Get in Touch
           </button>
@@ -82,7 +89,7 @@ export default function NavBar() {
 
       {/* Mobile Menu (shown when dropdown is open) */}
       {isDropdownOpen && (
-        <div className="md:hidden bg-[#1A1346] mt-4 py-2 rounded-lg be-vietnam-pro">
+        <div className="lg:hidden bg-[#1A1346] mt-4 py-2 rounded-lg be-vietnam-pro">
           {NAVBAR_OPTIONS.map((option, index) => (
             <div key={index} className="px-4 py-2">
               <a

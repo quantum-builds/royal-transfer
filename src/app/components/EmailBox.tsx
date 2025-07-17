@@ -4,11 +4,11 @@ export default function EmailBox() {
       <input
         type="email"
         placeholder="Enter your email"
-        className="flex-grow px-4 py-5 text-sm text-gray-700 placeholder-gray-400 bg-transparent outline-none"
+        className="flex-grow px-4 py-5 text-sm 4xl:text-lg text-gray-700 placeholder-gray-400 bg-transparent outline-none"
       />
       <button
         type="submit"
-        className="bg-blue text-white text-sm font-medium px-5 py-2 rounded-md "
+        className="bg-blue text-white text-sm 4xl:text-lg font-medium px-5 py-2 rounded-md "
       >
         Subscribe
       </button>

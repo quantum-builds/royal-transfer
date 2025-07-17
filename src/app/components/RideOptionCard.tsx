@@ -22,11 +22,11 @@ interface RideOptionCardProps {
   oneWayPrice: number;
   roundTripPrice: number;
 }
-export default function RideOptionCard({ ...props }: RideOptionCardProps) {
+export default function RideOptionCard(props: RideOptionCardProps) {
   const [tourType, setTourType] = useState<"one-way" | "two-way">("one-way");
 
   return (
-    <div className="w-full bg-[#F8F8F8] px-5 lg:px-3 xl:px-5 py-10 flex md:gap-10 lg:gap-2 2xl:gap-10 justify-between rounded-xl">
+    <div className="w-full bg-[#F8F8F8] px-5 lg:px-3 xl:px-5 py-7 md:pb-0 xl:pb-0 xl:pt-10 flex md:gap-10 lg:gap-2 2xl:gap-10 justify-between rounded-xl">
       <div className="flex flex-col gap-2">
         <h3 className="text-3xl xl:text-[40px] bebas-neue leading-none text-black">
           {props.type}
@@ -35,7 +35,7 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
         <Image
           src={props.carImage}
           alt={`${props.carImage}-image`}
-          className="w-52 h-52 lg:w-40 lg:h-40 xl:w-52 xl:h-52"
+          className="w-52 h-52 lg:w-40 lg:h-40 xl:w-52 xl:h-52 object-contain"
         />
       </div>
       <div className="flex flex-col gap-4 be-vietnam-pro text-black">
@@ -46,7 +46,7 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
             width={24}
             height={24}
           />
-          <span className="text-[#283543]">
+          <span className="text-[#283543] whitespace-nowrap">
             {props.noOfPassengers} Passengers
           </span>
         </div>
@@ -57,7 +57,9 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
             width={24}
             height={24}
           />
-          <span className="text-[#283543]">{props.noOfLargeSeats} Large</span>
+          <span className="text-[#283543] whitespace-nowrap">
+            {props.noOfLargeSeats} Large
+          </span>
         </div>
         <div className="flex gap-1">
           <Image
@@ -66,12 +68,14 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
             width={24}
             height={24}
           />
-          <span className="text-[#283543]">{props.noOfSmallSeats} Small</span>
+          <span className="text-[#283543] whitespace-nowrap">
+            {props.noOfSmallSeats} Small
+          </span>
         </div>
       </div>
       <div className="flex flex-col items-end gap-8">
         <div className="flex flex-row lg:flex-col xl:flex-row  gap-3 items-center justify-center">
-          <p className="text-2xl uppercase bebas-neue leading-none text-black">
+          <p className="md:text-2xl lg:text-xl xl:text-2xl uppercase bebas-neue leading-none text-black">
             Trip type
           </p>
           <div className="flex  gap-3 items-center justify-center">
@@ -90,26 +94,20 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
             </div>
           </div>
         </div>
-        {tourType === "one-way" ? (
-          <div className="inline-flex flex-col gap-1 be-vietnam-pro text-black">
-            <p className="text-xl  text-end font-semibold">
-              Total One way Price
-            </p>
-            <p className="text-2xl text-end font-semibold">
-              $ {props.oneWayPrice}.00
-            </p>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-1 w-fit be-vietnam-pro text-black">
-            <p className="text-xl  text-end font-semibold">
-              Total Two way Price
-            </p>
-            <p className="text-2xl text-end font-semibold">
-              $ {props.roundTripPrice}.00
-            </p>
-          </div>
-        )}
-        <button className="bg-blue text-white font-semibold px-8 lg:px-6 xl:px-8 py-3 rounded-full w-fit cursor-pointer poppins ">
+        <div className="flex flex-col items-end gap-1 be-vietnam-pro text-black text-end w-[max-content]">
+          <p className="md:text-xl lg:text-lg xl:text-xl font-semibold whitespace-nowrap">
+            {tourType === "one-way"
+              ? "Total One way Price"
+              : "Total Two way Price"}
+          </p>
+          <p className="md:text-xl lg:text-xl xl:text-2xl font-semibold">
+            ${" "}
+            {tourType === "one-way" ? props.oneWayPrice : props.roundTripPrice}
+            .00
+          </p>
+        </div>
+
+        <button className="bg-blue text-white font-semibold px-8 lg:px-5 xl:px-8 py-3 rounded-full w-fit cursor-pointer poppins ">
           Confirm Ride
         </button>
       </div>

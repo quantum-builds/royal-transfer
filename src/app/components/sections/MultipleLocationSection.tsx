@@ -45,8 +45,8 @@ const SLIDER_DATA = [
 
 export default function MultipleLocationSection() {
   return (
-    <section className="h-[85vh] flex justify-center items-center poppins">
-      <div className="h-9/12 flex flex-col justify-between items-center gap-20 md:w-11/12 xl:w-10/12 mx-auto">
+    <section className="lg:h-[520px] 3xl:h-[520px]  flex flex-col justify-center my-20 poppins">
+      <div className=" flex flex-col justify-between items-center gap-20 md:w-11/12 xl:w-10/12 mx-auto">
         <div className="flex flex-col gap-6 justify-center items-center text-center">
           <h2 className="text-[64px] bebas-neue text-black uppercase leading-none">
             Serving <span className="text-yellow">Multiple Localities</span>
