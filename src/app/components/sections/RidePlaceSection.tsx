@@ -1,10 +1,8 @@
 import {
-  ComfortCar,
   EconomyCar,
   HondaCity,
   NissanGT,
   SportCar,
-  SuvCar,
   SuzukiSwift,
   Toyota,
 } from "@/assets";
@@ -18,8 +16,6 @@ const ROUTES = [
 ];
 const CAR_TYPE = [
   { carImage: EconomyCar, carName: "Economy" },
-  { carImage: ComfortCar, carName: "Comfort" },
-  { carImage: SuvCar, carName: "SUV" },
   { carImage: SportCar, carName: "Sport" },
 ];
 const CARS_AVAILABLE = [

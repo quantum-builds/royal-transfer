@@ -1,7 +1,6 @@
-import { AudiCarScam, TucsonCarBonus } from "@/assets";
+import { AudiCarScam } from "@/assets";
 import Image from "next/image";
 import ScamHelpDropDown from "../ScamHelpDropDown";
-import Button from "../Button";
 
 const SCAM_HELP_CARDS = [
   {
@@ -41,7 +40,7 @@ export default function ScamHelpSection() {
             be. But when scams do happen, we want you to know exactly how to
             avoid and report them.
           </p>
-          <Button text="Learn more" />
+          {/* <Button text="Learn more" /> */}
           <Image src={AudiCarScam} alt="Tucson Car Bonus" />
         </div>
       </div>

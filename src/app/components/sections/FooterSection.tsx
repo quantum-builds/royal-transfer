@@ -1,125 +1,109 @@
 import {
-  AppStoreIcon,
-  CopyRightIcon,
   FacebookIcon,
   InstagramIcon,
-  LinkedInIcon,
   Logo,
-  PlayStoreIcon,
   TwitterIcon,
-  ArrowRightWhite,
+  PhoneVector,
+  MailVector,
+  LocationVector,
+  TikTokIcon,
 } from "@/assets";
 import Image from "next/image";
+import EmailBox from "../EmailBox";
 
-const ROUTES = [
-  { from: "Wapda Town", to: "DHA phase 3" },
-  { from: "Iqbal Town", to: "DHA phase 3" },
-  { from: "Wapda Town", to: "DHA phase 3" },
-  { from: "Wapda Town", to: "DHA phase 3" },
-  { from: "Wapda Town", to: "DHA phase 3" },
-  { from: "Wapda Town", to: "DHA phase 3" },
+// const ROUTES = [
+//   { from: "Wapda Town", to: "DHA phase 3" },
+//   { from: "Iqbal Town", to: "DHA phase 3" },
+//   { from: "Wapda Town", to: "DHA phase 3" },
+//   { from: "Wapda Town", to: "DHA phase 3" },
+//   { from: "Wapda Town", to: "DHA phase 3" },
+//   { from: "Wapda Town", to: "DHA phase 3" },
+// ];
+
+const CONTACT_DETAILS = [
+  { image: PhoneVector, text: "+4420 8004 9990" },
+  {
+    image: MailVector,
+    text: "info@royaltransfers.co.uk",
+  },
+  {
+    image: LocationVector,
+    text: "450 bath road heathrow longford UB7 0EB",
+  },
 ];
+
+const LINKS = [
+  { link: "/", text: "Car Types" },
+  { links: "/", text: "Services" },
+  { links: "/", text: "Cities" },
+  { links: "/", text: "About" },
+];
+
+const SOCIAL_ICONS = [FacebookIcon, InstagramIcon, TwitterIcon, TikTokIcon];
+
 export default function FooterSection() {
   return (
-    <footer className="bg-footer-gradient h-[65vh] text-white flex flex-col justify-center">
-      <div className="h-10/12 md:w-11/12 xl:w-10/12 mx-auto flex flex-col justify-center items-center ">
-        <div className=" h-2/3 flex justify-between gap-16">
-          <div className="flex-[30%] flex flex-col gap-8">
-            <Image
-              src={Logo}
-              alt="Royal Transfer Logo"
-              width={120}
-              height={48}
-            />
-            <p className="text-lg">
-              Share the cost, and reduce your carbon footprint Whether you’re
-              planning a weekend getaway or a daily commute, ride-sharing makes
-              every trip better for you and the planet.
+    <footer className="bg-blue h-[60vh] text-white flex flex-col justify-center">
+      <div className="h-11/12 md:w-11/12 xl:w-10/12 mx-auto flex flex-col justify-between items-center ">
+        <div className=" flex flex-col  items-center gap-12">
+          <Image src={Logo} alt="Royal Transfer Logo" width={150} height={60} />
+          <h2 className="text-[64px] bebas-neue text-white uppercase leading-none">
+            Your Journey Begins with Royal Transfers
+          </h2>
+        </div>
+
+        <div className="flex w-full justify-between  gap-10">
+          <div className="flex flex-col gap-8">
+            <p className="bebas-neue leading-none text-4xl text-yellow uppercase">
+              Contact Details
             </p>
-            <div className="flex gap-8">
-              <Image
-                src={InstagramIcon}
-                alt="Instagram Icon"
-                width={32}
-                height={32}
-              />
-              <Image
-                src={FacebookIcon}
-                alt="Facebook Icon"
-                width={32}
-                height={32}
-              />
-              <Image
-                src={TwitterIcon}
-                alt="Twitter Icon"
-                width={32}
-                height={32}
-              />
-              <Image
-                src={LinkedInIcon}
-                alt="LinkedIn Icon"
-                width={32}
-                height={32}
-              />
-            </div>
-          </div>
-          <div className="flex-[20%] flex flex-col  gap-8 text-lg ">
-            <h3 className="mb-4 text-4xl">HOW TO TRAVEL</h3>
-            <p>All Carpool Routes</p>
-            <p>All Carpool Destinations</p>
-          </div>
-          <div className="flex-[30%] flex flex-col gap-12 text-lg">
-            <h3 className="mb-4 text-4xl">All Carpool Destinations</h3>
-            <div className="flex flex-col gap-1">
-              {ROUTES.map((route, index) => (
-                <div key={index} className="flex gap-3 items-center">
-                  <p className="min-w-[100px]">{route.from}</p>
+            <div className="flex flex-col gap-6 poppins">
+              {CONTACT_DETAILS.map((detail, index) => (
+                <div key={index} className="flex gap-3">
                   <Image
-                    src={ArrowRightWhite}
-                    alt="Arrow Right Icon"
+                    src={detail.image}
+                    alt="Contact Icon"
                     width={24}
                     height={24}
                   />
-                  <p>{route.to}</p>
+                  <p className="text-lg">{detail.text}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="flex-[20%] flex flex-col gap-8">
-            <h3 className="mb-4 text-4xl">Download App</h3>
-            <Image
-              src={AppStoreIcon}
-              alt="App Store Icon"
-              width={150}
-              height={50}
-            />
-            <Image
-              src={PlayStoreIcon}
-              alt="Play Store Icon"
-              width={150}
-              height={50}
-            />
+          <div className="h-full flex flex-col justify-between">
+            <div className="flex gap-4">
+              {LINKS.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.link}
+                  className="text-lg be-vietnam-pro"
+                >
+                  {link.text}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 items-end poppins">
+            <EmailBox />
+            <div className="flex gap-3">
+              {SOCIAL_ICONS.map((icon, index) => (
+                <Image
+                  key={index}
+                  src={icon}
+                  alt={icon}
+                  width={32}
+                  height={32}
+                />
+              ))}
+            </div>
           </div>
         </div>
+
+        <p className="text-md poppins">
+          Copyright © 2025 Go Royal Transfers - All Rights Reserved
+        </p>
       </div>
-      <>
-        <div className="bg-white h-[1px] w-full"></div>
-        <div className="h-2/12 md:w-11/12 xl:w-10/12 mx-auto flex justify-between items-center  text-lg">
-          <div className="flex gap-5">
-            <p>Terms and Conditions</p>
-            <p>Cookies Settings</p>
-          </div>
-          <div className="flex gap-3">
-            <p>Gocar,2024</p>
-            <Image
-              src={CopyRightIcon}
-              alt="Copyright Icon"
-              width={20}
-              height={16}
-            />
-          </div>
-        </div>
-      </>
     </footer>
   );
 }

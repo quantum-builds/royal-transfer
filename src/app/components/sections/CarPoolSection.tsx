@@ -1,7 +1,5 @@
 import { TucsonCarBonus } from "@/assets";
 import Image from "next/image";
-import { title } from "process";
-import { deserialize } from "v8";
 import CarPoolCard from "../CarPoolCard";
 
 const CARPOOL_REWARDS = [

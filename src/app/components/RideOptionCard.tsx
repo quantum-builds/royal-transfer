@@ -11,8 +11,6 @@ import {
   TwoWay,
 } from "@/assets";
 import { useState } from "react";
-import Button from "./Button";
-import { ArrowUp } from "lucide-react";
 
 interface RideOptionCardProps {
   type: string;
@@ -30,7 +28,9 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
   return (
     <div className="w-full bg-[#F8F8F8] px-5 lg:px-3 xl:px-5 py-10 flex md:gap-10 lg:gap-2 2xl:gap-10 justify-between rounded-xl">
       <div className="flex flex-col gap-2">
-        <h3 className="text-3xl xl:text-4xl ">{props.type}</h3>
+        <h3 className="text-3xl xl:text-[40px] bebas-neue leading-none text-black">
+          {props.type}
+        </h3>
         <StarRating rating={props.star} />
         <Image
           src={props.carImage}
@@ -38,7 +38,7 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
           className="w-52 h-52 lg:w-40 lg:h-40 xl:w-52 xl:h-52"
         />
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 be-vietnam-pro text-black">
         <div className="flex gap-1">
           <Image
             src={PassengerIcon}
@@ -70,20 +70,16 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
         </div>
       </div>
       <div className="flex flex-col items-end gap-8">
-        <div className="flexflex-row lg:flex-col xl:flex-row  gap-3 items-center justify-center">
-          <p className="text-xl uppercase">Trip type</p>
+        <div className="flex flex-row lg:flex-col xl:flex-row  gap-3 items-center justify-center">
+          <p className="text-2xl uppercase bebas-neue leading-none text-black">
+            Trip type
+          </p>
           <div className="flex  gap-3 items-center justify-center">
             <div
-              className={`px-3 py-2 rounded-lg bg-[#283543] border-[1px] border-[#D9D9D9] cursor-pointer`}
+              className={`px-3 py-2 rounded-lg bg-[#283543] border-[1px]  cursor-pointer`}
               onClick={() => setTourType("one-way")}
             >
-              <Image
-                src={OneWay}
-                alt="One Way Icon"
-                width={10}
-                height={10}
-                className="bg-gray"
-              />
+              <Image src={OneWay} alt="One Way Icon" width={10} height={10} />
             </div>
             <div
               className={`p-2 rounded-lg bg-white
@@ -95,7 +91,7 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
           </div>
         </div>
         {tourType === "one-way" ? (
-          <div className="inline-flex flex-col gap-1">
+          <div className="inline-flex flex-col gap-1 be-vietnam-pro text-black">
             <p className="text-xl  text-end font-semibold">
               Total One way Price
             </p>
@@ -104,7 +100,7 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
             </p>
           </div>
         ) : (
-          <div className="flex flex-col gap-1 w-fit">
+          <div className="flex flex-col gap-1 w-fit be-vietnam-pro text-black">
             <p className="text-xl  text-end font-semibold">
               Total Two way Price
             </p>
@@ -113,7 +109,9 @@ export default function RideOptionCard({ ...props }: RideOptionCardProps) {
             </p>
           </div>
         )}
-        <Button text="Confirm Ride" />
+        <button className="bg-blue text-white font-semibold px-8 lg:px-6 xl:px-8 py-3 rounded-full w-fit cursor-pointer poppins ">
+          Confirm Ride
+        </button>
       </div>
     </div>
   );

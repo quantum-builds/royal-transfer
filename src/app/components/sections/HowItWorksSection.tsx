@@ -1,50 +1,53 @@
-import { CarVector, FlashVector, HandMoneyVector } from "@/assets";
+import {
+  CarVector,
+  LocationPinYellowVector,
+  RideConfidenceVector,
+} from "@/assets";
 import Image from "next/image";
 import Link from "next/link";
 
 const WORK_DATA = [
   {
-    title: "Trust who you travel with.",
+    title: "Pick your location",
+    image: LocationPinYellowVector,
+    description:
+      "Pick a destination and we’ll provide you a taxi in the best Price.",
+    readMoreLink: "/",
+  },
+  {
+    title: "Choose your ride",
     image: CarVector,
     description:
-      "we take the time to get to know each of our members and partners. we check reviews, profiles and ID’s, so you know who you’re traveling with and can book.",
+      "Choose a car that suit your needs All licensed, high quality drivers.",
     readMoreLink: "/",
   },
   {
-    title: "Your pick of rides at low prices.",
-    image: HandMoneyVector,
+    title: "Ride with confidence",
+    image: RideConfidenceVector,
     description:
-      "No matter where you’re going, by carpool find the perfect ride from our wide range of destinations and routes at low prices..",
-    readMoreLink: "/",
-  },
-  {
-    title: "Scroll, click tap and go!",
-    image: FlashVector,
-    description:
-      "Booking a ride has never been easier! Thanks to our simple app powered by great technology, you can book a ride close to you in just minutes.",
+      "Drivers and their cab providers independently rated by customers",
     readMoreLink: "/",
   },
 ];
 export default function HowItWorksSection() {
   return (
-    <section className="h-[95vh] flex justify-center items-center bg-top-car-gradient ">
+    <section className="h-[85vh] flex justify-center items-center poppins">
       <div className="h-9/12 flex flex-col justify-between items-center gap-20 md:w-11/12 xl:w-10/12 mx-auto">
-        <div className="flex flex-col gap-6 justify-center items-center text-center">
-          <h2 className="text-5xl ">
+        <div className="flex flex-col gap-2 justify-center items-center text-center">
+          <h2 className="text-[64px] text-black bebas-neue ">
             HOW IT
-            <span className="text-[#F9B424]"> WORKS</span>
+            <span className="text-yellow"> WORKS</span>
           </h2>
-          <p className="text-lg text-[#283543B2] w-1/3">
-            Drivers post their trips, passengers find rides, and together they
-            split costs. Search for available journeys, connect with drivers or
-            passengers, and hit the road. It’s affordable, convenient and
-            eco-friendly!
+          <p className="text-lg text-gray w-2/5">
+            Book your ride via our website, choose your preferred ride option,
+            and enjoy a safe, comfortable journey — all with just a few taps and
+            pay easily after your trip via cash or card.
           </p>
         </div>
         <div className="flex justify-between gap-10 w-full">
           {WORK_DATA.map((item, index) => (
             <div key={index} className="flex flex-col gap-8 p-6 text-center">
-              <div className="border-2 w-fit mx-auto border-[#F9B424] rounded-full p-4 flex justify-center items-center ">
+              <div className="border-2 w-fit mx-auto border-yellow rounded-full p-4 flex justify-center items-center ">
                 <Image
                   src={item.image}
                   alt={`${item.title} image`}
@@ -52,15 +55,15 @@ export default function HowItWorksSection() {
                 />
               </div>
 
-              <div className="flex flex-col gap-5 ">
-                <div className="flex flex-col gap-5 h-48">
-                  <h3 className="text-3xl ">{item.title.toUpperCase()}</h3>
-                  <p className="text-lg text-[#283543B2] ">
-                    {item.description}
-                  </p>
+              <div className="flex flex-col gap-3 ">
+                <div className="flex flex-col gap-3 h-32">
+                  <h3 className="text-[36px] text-black uppercase bebas-neue">
+                    {item.title}
+                  </h3>
+                  <p className="text-lg text-gray ">{item.description}</p>
                 </div>
                 <Link
-                  className="text-2xl text-[#0B6AF0] underline cursor-pointer  "
+                  className="text-2xl text-yellow underline cursor-pointer bebas-neue"
                   href={item.readMoreLink}
                 >
                   READ MORE

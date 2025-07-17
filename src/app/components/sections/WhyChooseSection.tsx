@@ -1,0 +1,62 @@
+import { ChooseImage, TickVector } from "@/assets";
+import Image from "next/image";
+
+// const SCAM_HELP_CARDS = [
+//   {
+//     title: "Trust, Safety and Transparency.",
+//     description:
+//       "Your safety is our priority. With verified profiles, driver ratings and passenger reviews, you can trust the Go community. Share your ride with confidence, knowing that you’re in good hands with follow travelers.",
+//     readMoreLink: "/",
+//   },
+//   {
+//     title: "Stay Safe from Scams.",
+//     description:
+//       "Your safety is our priority. With verified profiles, driver ratings and passenger reviews, you can trust the Go community. Share your ride with confidence, knowing that you’re in good hands with follow travelers.",
+//     readMoreLink: "/",
+//   },
+//   {
+//     title: "Affordable Travel for Everyone.",
+//     description:
+//       "Your safety is our priority. With verified profiles, driver ratings and passenger reviews, you can trust the Go community. Share your ride with confidence, knowing that you’re in good hands with follow travelers.",
+//     readMoreLink: "/",
+//   },
+// ];
+
+const REASONS = [
+  "Prompt Pick-Ups & On-Time Drop-Offs",
+  "Clean & Comfortable Vehicles",
+  "Licensed and Courteous Drivers",
+  "24/7 Taxi Service – Always Available",
+];
+export default function WhyChooseSection() {
+  return (
+    <section className="h-[80vh] flex justify-center items-center bg-[#F9F9F9] poppins">
+      <div className="h-9/12 flex justify-center items-center gap-20 md:w-11/12 xl:w-10/12 mx-auto">
+        <div className="flex-1 h-full flex flex-col gap-10 ">
+          <h2 className="text-[64px] text-black bebas-neue leading-none">
+            WHY CHOOSE <span className="text-yellow">ROYAL TRANSFERS</span>
+          </h2>
+          <p className="text-xl text-gray w-11/12">
+            Picking a taxi service involves more than simply moving from one
+            place to another. Only Royal Transfers can deliver the comfort you
+            need, combined with complete safety and excellent value, while
+            helping you trust them immediately. Royal Transfers follows this
+            value system to operate as your preferred taxi provider in your
+            local neighborhood.
+          </p>
+
+          {REASONS.map((reason, index) => (
+            <div key={index} className="flex gap-6 inter">
+              <Image src={TickVector} alt={"tick"} width={24} height={24} />
+              <p className="text-xl text-black">{reason}</p>
+            </div>
+          ))}
+          {/* <ScamHelpDropDown cardData={SCAM_HELP_CARDS} /> */}
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center gap-3 relative h-full ">
+          <Image src={ChooseImage} alt="Choose image" />
+        </div>
+      </div>
+    </section>
+  );
+}

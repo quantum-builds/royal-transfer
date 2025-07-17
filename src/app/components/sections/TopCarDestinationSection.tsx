@@ -1,4 +1,3 @@
-import Button from "../Button";
 import RouteInfoCard from "../RouteInfoCard";
 
 const ROUTES = [
@@ -28,7 +27,7 @@ export default function TopCarDestinationSection() {
               comfortable and affordable travel options to suit your needs.
               Start your journey with us today!
             </p>
-            <Button text="See more" />
+            {/* <Button text="See more" /> */}
           </div>
         </div>
         <div className="grid grid-cols-3 gap-10 w-full">

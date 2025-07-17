@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ArrowLeft,
   Driver1,
   Driver2,
   EconomyCar,
@@ -12,6 +13,8 @@ import RideOptionCard from "../RideOptionCard";
 import Image from "next/image";
 import { StarRating } from "../StarRating";
 import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const RIDE_OPTIONS = [
   {
@@ -81,17 +84,48 @@ const DRIVERS = [
 
 export default function RidePickingSection() {
   const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const handleBackClick = () => {
+    router.replace("/");
+    document
+      .getElementById("hero-section")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const pickup = searchParams.get("pickup");
   const arrival = searchParams.get("arrival");
+
+  useEffect(() => {
+    if (pickup && arrival) {
+      document
+        .getElementById("ride-section")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [pickup, arrival]);
 
   if (!pickup || !arrival) return null;
 
   return (
-    <section className="h-[170vh] flex flex-col justify-center  items-center">
+    <section
+      id="ride-section"
+      className="h-[170vh] flex flex-col justify-center  items-center"
+    >
       <div className="h-10/12 md:w-11/12 lg:w-[98%] xl:w-11/12 2xl:w-10/12 mx-auto flex flex-col gap-20">
+        <div className="w-full flex justify-end">
+          <button
+            className="cursor-pointer border-2 border-black bg-transparent text-black rounded-lg  px-3 py-4 flex gap-4 "
+            onClick={handleBackClick}
+          >
+            <Image src={ArrowLeft} alt="arrow-left" width={28} height={5} />
+            <p className="text-2xl be-vietnam-pro">Back to Get Quotes</p>
+          </button>
+        </div>
         <div className="flex w-full lg:w-11/12 mx-auto xl:w-full justify-between">
-          <h2 className="text-5xl uppercase">Pick Your Ride, Your Way</h2>
-          <div className="flex flex-col gap-2 text-end">
+          <h2 className="text-[64px] uppercase bebas-neue leading-none text-black">
+            Pick Your Ride, Your Way
+          </h2>
+          <div className="flex flex-col gap-2 text-end be-vietnam-pro">
             <p className="text-red-500 text-2xl">No Hidden Cost</p>
             <p className="text-2xl">Free Cancelation</p>
             <p className="text-2xl">All Prices Include Fees and Tolls</p>

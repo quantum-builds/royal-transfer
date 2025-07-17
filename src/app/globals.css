@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@import "@fontsource/bebas-neue";
+
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/autoplay";
 
 @layer utilities {
   .bg-footer-gradient {
@@ -33,6 +39,35 @@
   }
 }
 
+@theme {
+  --color-yellow: #caa35b;
+  --color-gray: #666666;
+  --color-black: #24204c;
+  --color-blue: #221f4b;
+}
+
+:root {
+  --font-bebas-neue: "Bebas Neue";
+  --font-be-vietnam-pro: "Be Vietnam Pro";
+  --font-poppins: "Poppins";
+  --font-inter: "Inter";
+}
+
+.bebas-neue {
+  font-family: var(--font-bebas-neue);
+}
+
+.inter {
+  font-family: var(--font-inter);
+}
+.poppins {
+  font-family: var(--font-poppins);
+}
+
+.be-vietnam-pro {
+  font-family: var(--font-be-vietnam-pro);
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -41,8 +76,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+ 
 }
 
 @media (prefers-color-scheme: dark) {
