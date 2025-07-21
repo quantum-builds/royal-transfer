@@ -43,18 +43,18 @@ const SOCIAL_ICONS = [FacebookIcon, InstagramIcon, TwitterIcon, TikTokIcon];
 
 export default function FooterSection() {
   return (
-    <footer className="bg-blue lg:h-[700px]   text-white flex flex-col justify-center">
-      <div className="h-11/12 md:w-11/12 xl:w-10/12 mx-auto flex flex-col justify-between items-center ">
+    <footer className="bg-blue h-[800px] md:h-[700px]   text-white flex flex-col justify-center">
+      <div className="h-11/12 px-3 md:px-0 md:w-11/12 xl:w-10/12 mx-auto flex flex-col justify-between items-center ">
         <div className=" flex flex-col  items-center gap-12">
           <Image src={Logo} alt="Royal Transfer Logo" width={150} height={60} />
-          <h2 className="text-[64px] bebas-neue text-white uppercase leading-none">
+          <h2 className="text-4xl md:text-[44px] lg:text-[52px] 2xl:text-[64px] bebas-neue text-white uppercase leading-none text-center">
             Your Journey Begins with Royal Transfers
           </h2>
         </div>
 
-        <div className="flex w-full justify-between  gap-10">
-          <div className="flex flex-col gap-8">
-            <p className="bebas-neue leading-none text-4xl text-yellow uppercase">
+        <div className="flex flex-col md:flex-row w-full justify-between gap-10">
+          <div className="flex flex-col gap-8 order-2 md:order-1">
+            <p className="bebas-neue leading-none text-3xl lg:text-4xl text-yellow uppercase">
               Contact Details
             </p>
             <div className="flex flex-col gap-6 poppins">
@@ -66,12 +66,14 @@ export default function FooterSection() {
                     width={24}
                     height={24}
                   />
-                  <p className="text-lg 4xl:text-2xl">{detail.text}</p>
+                  <p className="text-md lg:text-lg 4xl:text-2xl ">
+                    {detail.text}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="hidden h-full xl:flex flex-col justify-between">
+          <div className="hidden h-full xl:flex flex-col justify-between order-2">
             <div className="flex lg:flex-col xl:flex-row gap-4 whitespace-nowrap ">
               {LINKS.map((link, index) => (
                 <a
@@ -84,35 +86,30 @@ export default function FooterSection() {
               ))}
             </div>
           </div>
-          <div className=" hidden lg:flex xl:hidden  flex-col justify-between ">
+          <div className="h-4/5 lg:h-full flex xl:hidden  flex-col justify-between gap-8 order-1 md:order-2 ">
             <div className=" flex flex-col justify-between">
-              <div className="flex gap-4 whitespace-nowrap">
+              <div className="w-10/12 flex gap-1 lg:gap-2 justify-between  whitespace-nowrap">
                 {LINKS.map((link, index) => (
                   <a
                     key={index}
                     href={link.link}
-                    className="text-lg be-vietnam-pro"
+                    className="text-md lg:text-lg be-vietnam-pro"
                   >
                     {link.text}
                   </a>
                 ))}
               </div>
             </div>
-            <div className="flex flex-col lg:gap-2  items-end justify-center poppins"></div>
-            <EmailBox />
-            <div className="flex justify-end gap-3">
-              {SOCIAL_ICONS.map((icon, index) => (
-                <Image
-                  key={index}
-                  src={icon}
-                  alt={icon}
-                  width={32}
-                  height={32}
-                />
-              ))}
+            <div className="flex flex-col gap-2 items-start md:items-end justify-center poppins">
+              <EmailBox />
+              <div className="flex justify-end gap-3">
+                {SOCIAL_ICONS.map((icon, index) => (
+                  <Image key={index} src={icon} alt={icon} className="w-6 h-6 md:w-8 md:h-8"/>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="hidden xl:flex flex-col gap-4 items-end justify-center poppins">
+          <div className="hidden xl:flex flex-col gap-4 items-end justify-center poppins order-3">
             <EmailBox />
             <div className="flex gap-3">
               {SOCIAL_ICONS.map((icon, index) => (
@@ -128,7 +125,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <p className="text-md 4xl:text-xl poppins">
+        <p className="text-sm lg:text-md 4xl:text-xl poppins">
           Copyright © 2025 Go Royal Transfers - All Rights Reserved
         </p>
       </div>

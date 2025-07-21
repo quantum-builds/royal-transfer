@@ -13,7 +13,7 @@ interface CarTypesCardProps {
 }
 export default function CarTypesCard({ ...props }: CarTypesCardProps) {
   return (
-    <div className="w-full  bg-white px-3 xl:px-5 py-6 flex gap-0 2xl:gap-6 justify-between rounded-xl text-black">
+    <div className="w-full  bg-white px-3 xl:px-5 py-6 flex gap-6 md:gap-0 2xl:gap-6 justify-center md:justify-between rounded-xl text-black">
       <div className="flex flex-col gap-2">
         <h3 className="text-3xl xl:text-[40px] bebas-neue leading-none ">
           {props.type}
@@ -22,7 +22,7 @@ export default function CarTypesCard({ ...props }: CarTypesCardProps) {
         <Image
           src={props.carImage}
           alt={`${props.carImage}-image`}
-          className="w-52 h-52 lg:w-40 lg:h-40 xl:w-52 xl:h-52 object-contain"
+          className="w-32 h-32  md:w-52 md:h-52 lg:w-40 lg:h-40 xl:w-52 xl:h-52 object-contain"
         />
       </div>
       <div className="flex flex-col gap-4 be-vietnam-pro">

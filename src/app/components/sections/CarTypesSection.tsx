@@ -46,14 +46,14 @@ const CAR_TYPES = [
 
 export default function CarTypesSection() {
   return (
-    <section className="lg:h-[830px] xl:h-[930px] 3xl:h-[950px]  flex flex-col justify-center bg-[#F9F9F9] poppins">
-      <div className="h-9/12 flex flex-col justify-between items-center gap-5 md:w-11/12 xl:w-10/12 mx-auto">
+    <section id="#car-types" className="py-20 mb-10 bg-[#F9F9F9] poppins">
+      <div className="h-9/12 flex flex-col justify-between items-center gap-5 px-3 md:px-0 md:w-11/12 xl:w-10/12 mx-auto">
         <div className="hidden lg:flex items-start lg:gap-3 xl:gap-5 w-full h-2/3">
           <div className="flex-1 flex flex-col gap-6 ">
-            <h2 className="lg:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black ">
+            <h2 className="text-4xl md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black ">
               Car Types <span className="text-yellow">Available </span>
             </h2>
-            <p className="text-xl text-gray w-11/12">
+            <p className="text-sm md:text-lg text-gray w-11/12">
               Various car types available for rides include economy, Estate,
               Executive, MVP and Minibus, catering to different passenger needs
               and preferences. These options ensure comfort, affordability, and
@@ -77,7 +77,7 @@ export default function CarTypesSection() {
             </div>
           ))}
         </div>
-        <div className="hidden lg:flex  items-center gap-5 w-full">
+        <div className="hidden lg:flex  items-center lg:gap-3 xl:gap-5 w-full">
           {CAR_TYPES.slice(2).map((option, index) => (
             <CarTypesCard
               key={index}
@@ -91,17 +91,17 @@ export default function CarTypesSection() {
           ))}
         </div>
         <div className="flex-1 flex lg:hidden flex-col gap-6 ">
-          <h2 className="md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black ">
+          <h2 className="text-4xl md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black ">
             Car Types <span className="text-yellow">Available </span>
           </h2>
-          <p className="text-xl text-gray w-11/12">
+          <p className="text-md md:text-lg text-gray w-11/12">
             Various car types available for rides include economy, Estate,
             Executive, MVP and Minibus, catering to different passenger needs
             and preferences. These options ensure comfort, affordability, and
             style for all travelers.
           </p>
         </div>
-        <div className=" grid lg:hidden grid-cols-2 lg:grid-cols-3 items-center gap-3 xl:gap-5 w-full">
+        <div className=" grid lg:hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-3 xl:gap-5 w-full">
           {CAR_TYPES.map((option, index) => (
             <CarTypesCard
               key={index}

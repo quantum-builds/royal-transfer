@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { MinusIcon, PlusIcon } from "@/assets";
 import Image from "next/image";
@@ -64,14 +63,14 @@ export default function TermsConditionSection() {
   };
 
   return (
-    <section className="lg:min-h-[560px] 3xl:min-h-[520px] flex flex-col justify-center items-center mb-20 poppins">
-      <div className="h-10/12 flex flex-col justify-between items-center gap-5 md:w-11/12 xl:w-10/12 mx-auto">
-        <div className="flex items-start lg:gap-3 xl:gap-5 w-full h-2/3">
+    <section className="py-20 mb-10 poppins">
+      <div className="flex flex-col gap-5 px-3 md:px-0 md:w-11/12 xl:w-10/12 mx-auto">
+        <div className="flex items-start lg:gap-3 xl:gap-5 w-full">
           <div className="flex-1 flex flex-col gap-6">
-            <h2 className="lg:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black">
+            <h2 className="text-4xl md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black">
               Terms & <span className="text-yellow">conditions</span>
             </h2>
-            <p className="text-lg text-gray lg:w-1/2 xl:w-2/5">
+            <p className="text-md md:text-lg text-gray lg:w-1/2 xl:w-2/5">
               Terms and Conditions for the ride website outline user
               responsibilities and service limitations to ensure safe and fair
               usage. Please review and agree before booking rides.
@@ -79,8 +78,8 @@ export default function TermsConditionSection() {
           </div>
         </div>
 
-        <div className="flex w-11/12 2xl:w-10/12 3xl:w-9/12 5xl:w-3/5 flex-col md:flex-row gap-5 xl:gap-5  items-start justify-between">
-          <div className=" flex flex-col gap-5 w-[500px] xl:w-[550px] 2xl:w-[600px]">
+        <div className="flex w-11/12 2xl:w-10/12 3xl:w-9/12 5xl:w-3/5  mx-auto flex-col lg:flex-row gap-5 xl:gap-5 items-start justify-between mt-10">
+          <div className="flex flex-col gap-5 w-full  md:w-[500px] xl:w-[550px] 2xl:w-[600px]">
             {TERMS.filter((_, index) => index % 2 === 0).map(
               (term, originalIndex) => {
                 const actualIndex = originalIndex * 2;
@@ -117,7 +116,7 @@ export default function TermsConditionSection() {
                       }`}
                     >
                       <div
-                        className="text-gray poppins"
+                        className="prose text-gray poppins"
                         dangerouslySetInnerHTML={{ __html: term.description }}
                       />
                     </div>
@@ -127,7 +126,7 @@ export default function TermsConditionSection() {
             )}
           </div>
 
-          <div className=" flex flex-col gap-5 w-[500px]  xl:w-[550px] 2xl:w-[600px]">
+          <div className="flex flex-col gap-5 w-full md:w-[500px] xl:w-[550px] 2xl:w-[600px]">
             {TERMS.filter((_, index) => index % 2 === 1).map(
               (term, originalIndex) => {
                 const actualIndex = originalIndex * 2 + 1;
@@ -164,7 +163,7 @@ export default function TermsConditionSection() {
                       }`}
                     >
                       <div
-                        className="text-gray poppins"
+                        className="prose text-gray poppins"
                         dangerouslySetInnerHTML={{ __html: term.description }}
                       />
                     </div>

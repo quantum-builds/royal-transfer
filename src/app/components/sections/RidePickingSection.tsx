@@ -107,32 +107,29 @@ export default function RidePickingSection() {
   if (!pickup || !arrival) return null;
 
   return (
-    <section
-      id="ride-section"
-      className="lg:h-[1240px] xl:h-[1350px] 3xl:h-[1350px] flex flex-col justify-center  my-20"
-    >
-      <div className="h-full md:w-11/12  2xl:w-10/12 mx-auto flex flex-col gap-20">
+    <section id="ride-section" className="py-20 mb-10 poppins">
+      <div className="h-full px-3 md:px-0 md:w-11/12 xl:w-10/12  mx-auto flex flex-col gap-20">
         <div className="w-full flex justify-end">
           <button
             className="cursor-pointer border-2 border-black bg-transparent text-black rounded-lg  px-3 py-3 flex gap-4 "
             onClick={handleBackClick}
           >
             <Image src={ArrowLeft} alt="arrow-left" width={28} height={5} />
-            <p className="md:text-lg lg:text-xl xl:text-2xl be-vietnam-pro">
+            <p className="text-lg lg:text-xl xl:text-2xl be-vietnam-pro">
               Back to Get Quotes
             </p>
           </button>
         </div>
         <div className="flex w-full mx-auto xl:w-full justify-between">
-          <h2 className="md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black">
+          <h2 className="text-4xl md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-black">
             Pick Your Ride, Your Way
           </h2>
           <div className="flex flex-col gap-2 text-end be-vietnam-pro">
-            <p className="text-red-500 lg:text-lg xl:text-2xl">
+            <p className="text-red-500 text-md lg:text-lg xl:text-2xl">
               No Hidden Cost
             </p>
-            <p className="lg:text-lg xl:text-2xl">Free Cancelation</p>
-            <p className="lg:text-lg xl:text-2xl">
+            <p className="text-md lg:text-lg xl:text-2xl">Free Cancelation</p>
+            <p className="text-md lg:text-lg xl:text-2xl">
               All Prices Include Fees and Tolls
             </p>
           </div>
@@ -152,8 +149,8 @@ export default function RidePickingSection() {
             />
           ))}
           <div className="flex w-full flex-col items-end justify-end md:mt-3 lg:m-0">
-            <div className="flex flex-col gap-5 w-8/12  lg:w-10/12">
-              <h2 className="md:text-[44px] xl:text-[52px] 2xl:text-[64px] uppercase bebas-neue leading-none text-end text-black">
+            <div className="flex flex-col gap-5 w-[97%] md:w-8/12  lg:w-10/12">
+              <h2 className="text-4xl md:text-[44px] xl:text-[52px] 2xl:text-[64px]  uppercase bebas-neue leading-none text-end text-black">
                 Our Drivers Rating
               </h2>
               {DRIVERS.map((driver, index) => (

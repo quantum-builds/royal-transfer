@@ -35,17 +35,16 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 h-full flex flex-col">
-        {/* Pass scroll state */}
         <NavBar scrolled={scrolled} />
 
         <div className="flex-1/2" />
 
-        <div className="md:w-11/12 xl:w-10/12 mx-auto flex justify-between items-start lg:gap-0 xl:gap-6 lg:pb-8 2xl:pb-4 h-full">
+        <div className="w-11/12 xl:w-10/12 mx-auto flex justify-between items-start lg:gap-0 xl:gap-6 pb-8 2xl:pb-4 h-full">
           <Suspense fallback={<LocationQuoteFormSkeleton />}>
             <LocationQuoteForm />
           </Suspense>
 
-          <div className="flex w-3/5 h-full items-end justify-center">
+          <div className="hidden md:flex w-3/5 h-full items-end justify-center">
             <Image
               src={TaxiHero}
               alt="hero image"
