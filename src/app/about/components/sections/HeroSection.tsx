@@ -12,9 +12,8 @@ export default function HeroSection() {
     const handleScroll = () => {
       const hero = document.getElementById("hero-section");
       if (!hero) return;
-
       const heroBottom = hero.getBoundingClientRect().bottom;
-      setScrolled(heroBottom <= 80);
+      setScrolled(heroBottom <= 500);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,7 +33,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content and Navbar */}
-      <div className="relative z-10 h-full flex flex-col">
+      <div id="hero-section" className="relative z-10 h-full flex flex-col">
         <NavBar scrolled={scrolled} />
 
         {/* Centered Content */}

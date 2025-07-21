@@ -63,7 +63,7 @@ export default function TermsConditionSection() {
   };
 
   return (
-    <section className="py-20 mb-10 poppins">
+    <section id="terms-and-condition" className="scroll-mt-20 py-20  poppins">
       <div className="flex flex-col gap-5 px-3 md:px-0 md:w-11/12 xl:w-10/12 mx-auto">
         <div className="flex items-start lg:gap-3 xl:gap-5 w-full">
           <div className="flex-1 flex flex-col gap-6">

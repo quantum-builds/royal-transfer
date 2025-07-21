@@ -13,8 +13,8 @@ const NAVBAR_OPTIONS = [
     href: "#car-types",
   },
   {
-    label: "Services",
-    href: "#services",
+    label: "T&C",
+    href: "#terms-and-condition",
   },
   {
     label: "Cities",

@@ -45,7 +45,7 @@ const SLIDER_DATA = [
 
 export default function MultipleLocationSection() {
   return (
-    <section className="py-20 poppins">
+    <section id="cities" className="scroll-mt-20 py-20 poppins">
       <div className=" flex flex-col justify-between items-center gap-20 px-3 md:px-0 md:w-11/12 xl:w-10/12 mx-auto">
         <div className="flex flex-col gap-6 justify-center items-center text-center">
           <h2 className="text-4xl md:text-[44px] xl:text-[52px] 2xl:text-[64px] bebas-neue text-black uppercase leading-none">

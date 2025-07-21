@@ -52,7 +52,10 @@ const CAR_TYPES = [
 
 export default function CarTypesSection() {
   return (
-    <section id="#car-types" className="py-20 mb-10 bg-[#F9F9F9] poppins">
+    <section
+      id="car-types"
+      className="scroll-mt-20 py-20 mb-10 bg-[#F9F9F9] poppins"
+    >
       <div className="h-9/12 flex flex-col justify-between items-center gap-5 px-3 md:px-0 md:w-11/12 xl:w-10/12 mx-auto">
         <div className="hidden lg:flex items-start lg:gap-3 xl:gap-5 w-full h-2/3">
           <div className="flex-1 flex flex-col gap-6 ">

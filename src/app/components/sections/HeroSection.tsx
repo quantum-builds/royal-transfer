@@ -44,7 +44,7 @@ export default function HeroSection() {
             <LocationQuoteForm />
           </Suspense>
 
-          <div className="hidden md:flex w-[70%] xl:w-3/5 h-full items-end justify-center">
+          <div className="hidden md:flex w-[67%] xl:w-3/5 h-full items-end justify-center">
             <Image
               src={TaxiHero}
               alt="hero image"
