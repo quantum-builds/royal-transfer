@@ -5,10 +5,12 @@ import { StarRating } from "./StarRating";
 import Image from "next/image";
 import {
   LargeSeatIcon,
-  OneWay,
+  OneWayActive,
+  OneWayNotActive,
+  TwoWayActive,
+  TwoWayNotActive,
   PassengerIcon,
   SmallSeatIcon,
-  TwoWay,
 } from "@/assets";
 import { useState } from "react";
 
@@ -28,10 +30,59 @@ export default function RideOptionCard(props: RideOptionCardProps) {
   return (
     <div className="w-full bg-[#F8F8F8] px-5 lg:px-3 xl:px-5 py-7 md:pb-0 xl:pb-0 xl:pt-10 flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-2 2xl:gap-10 justify-between rounded-xl">
       <div className="flex flex-col gap-2">
-        <h3 className="text-3xl xl:text-[40px] bebas-neue leading-none text-black">
-          {props.type}
-        </h3>
-        <StarRating rating={props.star} />
+        <div className="flex  justify-between">
+          <div className="felx flex-col gap-2">
+            <h3 className="text-3xl xl:text-[40px] bebas-neue leading-none text-black">
+              {props.type}
+            </h3>
+            <StarRating rating={props.star} />
+          </div>
+          <div className="flex md:hidden flex-col items-center md:items-end gap-8">
+            <div className=" flex flex-col gap-2 items-center justify-center">
+              <p className="text-2xl uppercase bebas-neue leading-none text-black">
+                Trip type
+              </p>
+              <div className="flex gap-2 items-center justify-center">
+                {tourType === "one-way" ? (
+                  <Image
+                    src={OneWayActive}
+                    alt="One Way Active Icon"
+                    width={34}
+                    height={34}
+                    className="cursor-pointer"
+                  />
+                ) : (
+                  <Image
+                    src={OneWayNotActive}
+                    alt="One Way Not Active Icon"
+                    width={34}
+                    height={34}
+                    className="cursor-pointer"
+                    onClick={() => setTourType("one-way")}
+                  />
+                )}
+                {tourType === "two-way" ? (
+                  <Image
+                    src={TwoWayActive}
+                    alt="Two Way Active Icon"
+                    width={34}
+                    height={34}
+                    className="cursor-pointer"
+                  />
+                ) : (
+                  <Image
+                    src={TwoWayNotActive}
+                    alt="Two Way Not Active Icon"
+                    width={34}
+                    height={34}
+                    className="cursor-pointer"
+                    onClick={() => setTourType("two-way")}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
         <Image
           src={props.carImage}
           alt={`${props.carImage}-image`}
@@ -73,28 +124,51 @@ export default function RideOptionCard(props: RideOptionCardProps) {
           </span>
         </div>
       </div>
-      <div className="flex flex-col items-center md:items-end gap-8">
-        <div className="flex flex-row lg:flex-col xl:flex-row  gap-3 items-center justify-center">
-          <p className="text-3xl lg:text-xl xl:text-2xl uppercase bebas-neue leading-none text-black">
+      <div className="flex  flex-col items-center md:items-end gap-4 md:gap-8">
+        <div className="hidden md:flex flex-row lg:flex-col xl:flex-row  gap-3 items-center justify-center">
+          <p className="text-3xl lg:text-2xl xl:text-2xl uppercase bebas-neue leading-none text-black">
             Trip type
           </p>
           <div className="flex gap-3 items-center justify-center">
-            <div
-              className={`px-3 py-2 rounded-lg bg-[#283543] border-[1px]  cursor-pointer`}
-              onClick={() => setTourType("one-way")}
-            >
-              <Image src={OneWay} alt="One Way Icon" width={10} height={10} />
-            </div>
-            <div
-              className={`p-2 rounded-lg bg-white
-             cursor-pointer border-[1px] border-[#D9D9D9]`}
-              onClick={() => setTourType("two-way")}
-            >
-              <Image src={TwoWay} alt="Two Way Icon" width={20} height={20} />
-            </div>
+            {tourType === "one-way" ? (
+              <Image
+                src={OneWayActive}
+                alt="One Way Active Icon"
+                width={40}
+                height={40}
+                className="cursor-pointer"
+              />
+            ) : (
+              <Image
+                src={OneWayNotActive}
+                alt="One Way Not Active Icon"
+                width={40}
+                height={40}
+                className="cursor-pointer"
+                onClick={() => setTourType("one-way")}
+              />
+            )}
+            {tourType === "two-way" ? (
+              <Image
+                src={TwoWayActive}
+                alt="Two Way Active Icon"
+                width={40}
+                height={40}
+                className="cursor-pointer"
+              />
+            ) : (
+              <Image
+                src={TwoWayNotActive}
+                alt="Two Way Not Active Icon"
+                width={40}
+                height={40}
+                className="cursor-pointer"
+                onClick={() => setTourType("two-way")}
+              />
+            )}
           </div>
         </div>
-        <div className="flex flex-col items-end gap-1 be-vietnam-pro text-black text-end w-[max-content]">
+        <div className="flex flex-col items-center md:items-end gap-1 be-vietnam-pro text-black text-end w-[max-content]">
           <p className="text-xl lg:text-lg xl:text-xl font-semibold whitespace-nowrap">
             {tourType === "one-way"
               ? "Total One way Price"

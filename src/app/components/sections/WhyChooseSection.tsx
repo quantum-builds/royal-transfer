@@ -1,27 +1,6 @@
 import { ChooseImage, TickVector } from "@/assets";
 import Image from "next/image";
 
-// const SCAM_HELP_CARDS = [
-//   {
-//     title: "Trust, Safety and Transparency.",
-//     description:
-//       "Your safety is our priority. With verified profiles, driver ratings and passenger reviews, you can trust the Go community. Share your ride with confidence, knowing that you’re in good hands with follow travelers.",
-//     readMoreLink: "/",
-//   },
-//   {
-//     title: "Stay Safe from Scams.",
-//     description:
-//       "Your safety is our priority. With verified profiles, driver ratings and passenger reviews, you can trust the Go community. Share your ride with confidence, knowing that you’re in good hands with follow travelers.",
-//     readMoreLink: "/",
-//   },
-//   {
-//     title: "Affordable Travel for Everyone.",
-//     description:
-//       "Your safety is our priority. With verified profiles, driver ratings and passenger reviews, you can trust the Go community. Share your ride with confidence, knowing that you’re in good hands with follow travelers.",
-//     readMoreLink: "/",
-//   },
-// ];
-
 const REASONS = [
   "Prompt Pick-Ups & On-Time Drop-Offs",
   "Clean & Comfortable Vehicles",
@@ -51,7 +30,6 @@ export default function WhyChooseSection() {
               <p className="text-md md:text-lg text-black">{reason}</p>
             </div>
           ))}
-          {/* <ScamHelpDropDown cardData={SCAM_HELP_CARDS} /> */}
         </div>
         <div className="flex-1 flex flex-col items-center justify-center gap-3 relative h-full ">
           <Image src={ChooseImage} alt="Choose image" />

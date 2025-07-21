@@ -134,7 +134,7 @@ export default function RidePickingSection() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 xl:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-2 xl:gap-6">
           {RIDE_OPTIONS.map((option, index) => (
             <RideOptionCard
               key={index}
@@ -165,7 +165,9 @@ export default function RidePickingSection() {
                       width={64}
                       height={64}
                     />
-                    <span className="text-xl xl:text-2xl">{driver.name}</span>
+                    <span className="text-lg md:text-xl xl:text-2xl">
+                      {driver.name}
+                    </span>
                   </div>
                   <StarRating rating={driver.star} />
                 </div>

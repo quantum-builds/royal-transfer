@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Logo } from "@/assets";
 import { useState } from "react";
+import Link from "next/link";
 
 interface NavOption {
   label: string;
@@ -57,7 +58,9 @@ export default function NavBar({ scrolled }: NavBarProps) {
       }`}
     >
       <div className="md:w-11/12 xl:10/12 mx-auto flex justify-between items-center">
-        <Image src={Logo} alt="logo-white" width={70} height={50} />
+        <Link href="/" className="cursor-pointer">
+          <Image src={Logo} alt="Logo" width={70} height={50} />
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8 be-vietnam-pro">
@@ -90,9 +93,14 @@ export default function NavBar({ scrolled }: NavBarProps) {
         </div>
 
         <div className="hidden lg:block">
-          <button className="bg-yellow text-white px-6 xl:px-8 py-3 rounded-full poppins">
+          <a
+            href="https://wa.me/923134911933?text=Hi%20there%2C%20I%27d%20like%20to%20book%20a%20ride"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-yellow text-white px-6 xl:px-8 py-3 rounded-full poppins"
+          >
             Get in Touch
-          </button>
+          </a>
         </div>
       </div>
 
@@ -110,9 +118,14 @@ export default function NavBar({ scrolled }: NavBarProps) {
             </div>
           ))}
           <div className="px-4 py-2 mt-2">
-            <button className="bg-yellow text-white px-8 py-3 rounded-full poppins w-full">
+            <a
+              href="https://wa.me/923134911933?text=Hi%20there%2C%20I%27d%20like%20to%20book%20a%20ride"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow text-white px-8 py-3 rounded-full poppins w-full block text-center"
+            >
               Get in Touch
-            </button>
+            </a>
           </div>
         </div>
       )}

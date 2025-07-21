@@ -110,7 +110,7 @@ export default function CarTypesSection() {
             style for all travelers.
           </p>
         </div>
-        <div className=" grid lg:hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-3 xl:gap-5 w-full">
+        <div className=" grid lg:hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-6 md:gap-3 xl:gap-5 w-full">
           {CAR_TYPES.map((option, index) => (
             <CarTypesCard
               key={index}

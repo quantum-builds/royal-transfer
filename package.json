@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource/bebas-neue": "^5.2.6",
     "@hookform/resolvers": "^5.1.1",
+    "@sendgrid/mail": "^8.1.5",
     "@tailwindcss/typography": "^0.5.16",
     "lucide-react": "^0.525.0",
     "next": "15.3.4",
