@@ -111,11 +111,15 @@ export default function RidePickingSection() {
       <div className="h-full px-3 md:px-0 md:w-11/12 xl:w-10/12  mx-auto flex flex-col gap-20">
         <div className="w-full flex justify-end">
           <button
-            className="cursor-pointer border-2 border-black bg-transparent text-black rounded-lg  px-3 py-3 flex gap-4 "
+            className="cursor-pointer border-2 border-black bg-transparent text-black rounded-lg  px-3 py-2 flex gap-2 lg:gap-4 "
             onClick={handleBackClick}
           >
-            <Image src={ArrowLeft} alt="arrow-left" width={28} height={5} />
-            <p className="text-lg lg:text-xl xl:text-2xl be-vietnam-pro">
+            <Image
+              src={ArrowLeft}
+              alt="arrow-left"
+              className="w-4 md:w-5 lg:w-6"
+            />
+            <p className="text-md md:text-lg lg:text-xl xl:text-2xl be-vietnam-pro">
               Back to Get Quotes
             </p>
           </button>

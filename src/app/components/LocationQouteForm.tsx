@@ -110,7 +110,7 @@ export default function LocationQuoteForm() {
 
         <button
           type="submit"
-          className="bg-blue text-white text-xl font-semibold px-8 py-3 rounded-full w-full cursor-pointer"
+          className="bg-blue text-white text-md lg:text-xl font-semibold px-8 py-2 md:py-3 rounded-full w-full cursor-pointer"
         >
           Get Quote
         </button>
