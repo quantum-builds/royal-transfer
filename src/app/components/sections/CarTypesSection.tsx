@@ -1,4 +1,10 @@
-import { EconomyCar, EstateCar, ExecutiveCar, MpvCar } from "@/assets";
+import {
+  EconomyCar,
+  EstateCar,
+  ExecutiveCar,
+  MiniBusCar,
+  MpvCar,
+} from "@/assets";
 import CarTypesCard from "../CarTpesCard";
 
 const CAR_TYPES = [
@@ -37,7 +43,7 @@ const CAR_TYPES = [
   {
     type: "MINIBUS",
     star: 5,
-    carImage: MpvCar,
+    carImage: MiniBusCar,
     noOfPassengers: 8,
     noOfLargeSeats: 8,
     noOfSmallSeats: 0,

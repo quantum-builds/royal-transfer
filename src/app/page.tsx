@@ -14,16 +14,9 @@ export default function Home() {
       <Suspense fallback={<RidePickingSectionSkeleton />}>
         <RidePickingSection />
       </Suspense>
-      {/* <HowItWorksSection /> */}
-      {/* <WhyChooseSection /> */}
-      {/* <LookingForTaxiSection /> */}
       <CarTypesSection />
       <MultipleLocationSection />
       <TermsConditionSection />
-      {/* <ScamHelpSection /> */}
-      {/* <CarPoolSection /> */}
-      {/* <RidePlanSection /> */}
-      {/* <TopCarDestinationSection /> */}
       <FooterSection />
     </>
   );
