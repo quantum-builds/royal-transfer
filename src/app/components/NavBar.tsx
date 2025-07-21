@@ -12,10 +12,7 @@ const NAVBAR_OPTIONS = [
     label: "Car Types",
     href: "#car-types",
   },
-  {
-    label: "T&C",
-    href: "#terms-and-condition",
-  },
+
   {
     label: "Cities",
     href: "#cities",
@@ -23,6 +20,10 @@ const NAVBAR_OPTIONS = [
   {
     label: "About",
     href: "/about",
+  },
+  {
+    label: "T&C",
+    href: "#terms-and-condition",
   },
 ];
 
