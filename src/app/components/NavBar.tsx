@@ -1,10 +1,17 @@
 "use client";
+
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Logo } from "@/assets";
 import { useState } from "react";
 
-const NAVBAR_OPTIONS = [
+interface NavOption {
+  label: string;
+  href?: string;
+  hash?: string;
+}
+
+const NAVBAR_OPTIONS: NavOption[] = [
   { label: "Home", href: "/" },
   { label: "Car Types", hash: "car-types" },
   { label: "Cities", hash: "cities" },
@@ -21,7 +28,7 @@ export default function NavBar({ scrolled }: NavBarProps) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleNavigation = (option: any) => {
+  const handleNavigation = (option: NavOption) => {
     if (option.href) {
       router.push(option.href);
       setIsDropdownOpen(false);
@@ -31,12 +38,12 @@ export default function NavBar({ scrolled }: NavBarProps) {
     const targetPath = "/";
     const targetHash = `#${option.hash}`;
 
-    if (pathname === targetPath) {
+    if (pathname === targetPath && option.hash) {
       const el = document.getElementById(option.hash);
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
       }
-    } else {
+    } else if (option.hash) {
       router.push(`${targetPath}${targetHash}`);
     }
 
