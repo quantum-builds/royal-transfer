@@ -1,37 +1,47 @@
 "use client";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { Logo } from "@/assets";
 import { useState } from "react";
 
 const NAVBAR_OPTIONS = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Car Types",
-    href: "#car-types",
-  },
-
-  {
-    label: "Cities",
-    href: "#cities",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "T&C",
-    href: "#terms-and-condition",
-  },
+  { label: "Home", href: "/" },
+  { label: "Car Types", hash: "car-types" },
+  { label: "Cities", hash: "cities" },
+  { label: "About", href: "/about" },
+  { label: "T&C", hash: "terms-and-condition" },
 ];
 
 interface NavBarProps {
   scrolled: boolean;
 }
+
 export default function NavBar({ scrolled }: NavBarProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavigation = (option: any) => {
+    if (option.href) {
+      router.push(option.href);
+      setIsDropdownOpen(false);
+      return;
+    }
+
+    const targetPath = "/";
+    const targetHash = `#${option.hash}`;
+
+    if (pathname === targetPath) {
+      const el = document.getElementById(option.hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      router.push(`${targetPath}${targetHash}`);
+    }
+
+    setIsDropdownOpen(false);
+  };
 
   return (
     <nav
@@ -40,37 +50,28 @@ export default function NavBar({ scrolled }: NavBarProps) {
       }`}
     >
       <div className="md:w-11/12 xl:10/12 mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Image src={Logo} alt="logo-white" width={70} height={50} />
-        </div>
+        <Image src={Logo} alt="logo-white" width={70} height={50} />
 
-        {/* Navigation Links */}
+        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8 be-vietnam-pro">
           {NAVBAR_OPTIONS.map((option, index) => (
-            <div key={index} className="relative">
-              <a
-                href={option.href}
-                className="text-white hover:text-yellow transition-colors duration-200 text-lg scroll-smooth"
-              >
-                {option.label}
-              </a>
-            </div>
+            <button
+              key={index}
+              onClick={() => handleNavigation(option)}
+              className="text-white hover:text-yellow transition-colors duration-200 text-lg"
+            >
+              {option.label}
+            </button>
           ))}
         </div>
 
-        {/* Mobile Menu Button (hidden on desktop) */}
+        {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center">
           <button
             className="text-white focus:outline-none"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+            <svg className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -82,27 +83,27 @@ export default function NavBar({ scrolled }: NavBarProps) {
         </div>
 
         <div className="hidden lg:block">
-          <button className="bg-yellow text-white px-8 lg:px-6 xl:px-8 py-3 rounded-full w-fit cursor-pointer poppins ">
+          <button className="bg-yellow text-white px-6 xl:px-8 py-3 rounded-full poppins">
             Get in Touch
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu (shown when dropdown is open) */}
+      {/* Mobile Dropdown */}
       {isDropdownOpen && (
         <div className="lg:hidden bg-[#1A1346] mt-4 py-2 rounded-lg be-vietnam-pro">
           {NAVBAR_OPTIONS.map((option, index) => (
             <div key={index} className="px-4 py-2">
-              <a
-                href={option.href}
-                className="block text-white hover:text-[#56aeff]"
+              <button
+                onClick={() => handleNavigation(option)}
+                className="block text-white hover:text-[#56aeff] w-full text-left"
               >
                 {option.label}
-              </a>
+              </button>
             </div>
           ))}
           <div className="px-4 py-2 mt-2">
-            <button className="bg-yellow text-white px-8 lg:px-6 xl:px-8 py-3 rounded-full w-fit cursor-pointer poppins ">
+            <button className="bg-yellow text-white px-8 py-3 rounded-full poppins w-full">
               Get in Touch
             </button>
           </div>
@@ -110,32 +111,4 @@ export default function NavBar({ scrolled }: NavBarProps) {
       )}
     </nav>
   );
-}
-
-{
-  /* {option.options ? (
-                    <div
-                      className="cursor-pointer flex items-center gap-1"
-                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    >
-                      <span className="text-white hover:text-yellow transition-colors duration-200 text-lg">
-                        {option.label}
-                      </span>
-                      <ChevronDown className="text-white h-5 w-5" />
-    
-                      {isDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                          {option.options.map((subItem, subIndex) => (
-                            <a
-                              key={subIndex}
-                              href={subItem.href}
-                              className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-yellow"
-                            >
-                              {subItem.label}
-                            </a>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ) : ( */
 }

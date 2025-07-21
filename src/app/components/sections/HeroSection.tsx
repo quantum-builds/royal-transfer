@@ -16,7 +16,7 @@ export default function HeroSection() {
       if (!hero) return;
 
       const heroBottom = hero.getBoundingClientRect().bottom;
-      setScrolled(heroBottom <= 80); // 80px is a safe buffer for nav height
+      setScrolled(heroBottom <= 80);
     };
 
     window.addEventListener("scroll", handleScroll);
