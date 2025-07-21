@@ -24,7 +24,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="hero-section" className="relative h-screen overflow-hidden">
+    <section
+      id="hero-section"
+      className="relative h-[80vh] lg:h-screen overflow-hidden"
+    >
       <div className="absolute inset-0 z-0">
         <Image
           className="w-full h-full object-cover"
