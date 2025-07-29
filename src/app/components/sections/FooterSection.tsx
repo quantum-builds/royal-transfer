@@ -6,26 +6,28 @@ import {
   MailVector,
   LocationVector,
   TikTokIcon,
-  XIcon,
 } from "@/assets";
 import Image from "next/image";
 import EmailBox from "../EmailBox";
 import Link from "next/link";
 
 const CONTACT_DETAILS = [
-  { image: PhoneVector, text: "+4420 8004 9990" },
+  { image: PhoneVector, text: "+44 20 8004 9990" },
   {
     image: MailVector,
     text: "info@royaltransfers.co.uk",
   },
   {
     image: LocationVector,
-    text: "450 bath road heathrow longford UB7 0EB",
+    text: "450 Bath Road Heathrow Longford UB7 0EB",
   },
 ];
 
-const SOCIAL_ICONS = [FacebookIcon, InstagramIcon, XIcon, TikTokIcon];
-
+const SOCIAL_ICONS = [
+  { icon: FacebookIcon, link: "https://www.facebook.com/royaltransfersuk/" },
+  { icon: InstagramIcon, link: "https://www.instagram.com/royal_transfersuk/" },
+  { icon: TikTokIcon, link: "https://www.tiktok.com/@royaltransfersuk" },
+];
 export default function FooterSection() {
   return (
     <footer className="bg-blue h-[800px] md:h-[700px]   text-white flex flex-col justify-center">
@@ -70,12 +72,18 @@ export default function FooterSection() {
               <EmailBox />
               <div className="flex justify-end gap-3">
                 {SOCIAL_ICONS.map((icon, index) => (
-                  <Image
+                  <a
                     key={index}
-                    src={icon}
-                    alt={icon}
-                    className="w-4 h-4 md:w-6 md:h-6"
-                  />
+                    href={icon.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={icon.icon}
+                      alt={icon.icon}
+                      className="w-4 h-4 md:w-6 md:h-6"
+                    />
+                  </a>
                 ))}
               </div>
             </div>
@@ -84,12 +92,18 @@ export default function FooterSection() {
             <EmailBox />
             <div className="flex gap-3">
               {SOCIAL_ICONS.map((icon, index) => (
-                <Image
+                <a
                   key={index}
-                  src={icon}
-                  alt={icon}
-                  className="w-4 h-4 md:w-6 md:h-6"
-                />
+                  href={icon.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={icon.icon}
+                    alt={icon.icon}
+                    className="w-4 h-4 md:w-6 md:h-6"
+                  />
+                </a>
               ))}
             </div>
           </div>
